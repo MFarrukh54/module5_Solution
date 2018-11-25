@@ -45,8 +45,11 @@
       </span>
       <br>
       <input type="text" name=" favoritedish" placeholder="Pick a  favorite dish"
-      ng-model="reg.user.favoritedish"
+      ng-model="reg.user.favoritedish" ng-keyDown="reg.update()"
     >
+    <span ng-if="reg.empty">
+      No such menu item exist.
+    </span>
     <button id="submit"
       ng-disabled="regForm.$invalid"
       ng-click="reg.value()">Submit</button>
@@ -55,6 +58,7 @@
         Form valid? {{ regForm.$valid }}
       </div>
   </form>
-  
-  {{reg.vlue | json}}
+  <span ng-if="reg.true">
+   Your information has been stored.
+  </span>
 </div>

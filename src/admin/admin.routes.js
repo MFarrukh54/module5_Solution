@@ -22,17 +22,14 @@ function config($stateProvider, $httpProvider) {
       controller: 'RegistrationController',
       controllerAs: 'reg'
     })
-    .state('admin.login', {
-      url: '/login',
-      templateUrl: 'src/admin/login/login.html',
-      controller: 'LoginController',
-      controllerAs: 'loginCtrl',
+    .state('admin.Info', {
+      url: '/',
+      templateUrl: 'src/admin/registerInfo/registerInfoTemplate.html',
+      controller: 'RegistrationInfoController',
+      controllerAs: 'ctrl',
       // These are params that this state expects to be populated
       // Allows us to pass via $state.go(path, params)
-      params: {
-        toParams: null,
-        toState: null
-      }
+      
     })
     .state('admin.auth.category', {
       url: '/category/{categoryId}',

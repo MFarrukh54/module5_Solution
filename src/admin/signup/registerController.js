@@ -7,12 +7,35 @@
 RegistrationController.$inject=['MenuService'];
 function RegistrationController(MenuService) {
   var reg = this;
-  console.log("woor");
+  reg.empty="";
+  reg.true="";
+  
+  reg.update=function(){
+      reg.empty="";
+  }
  reg.value=
  function(){
-     console.log("work");
-    MenuService.getMenuItems(reg.user.favoritedish);
+     if(reg.user.favoritedish!="" && reg.user.favoritedish!=null){
+    var promise=MenuService.getMenuItems(reg.user.favoritedish);
+    promise.then(function(response){
+        if(response.menu_items.length>0){
+        reg.data=response;
+    reg.true="true";
+    MenuService.userData=reg.user;
+}
+        else{
+            reg.true="";
+            reg.empty="true";
+            MenuService.userData=[];
+        }
+    });
  } 
+ else{
+    reg.true="";
+    reg.empty="true";
+    MenuService.userData=[];
+ }
+}
 //   reg.submit = function () {
 //     reg.completed = true;
 //   };
