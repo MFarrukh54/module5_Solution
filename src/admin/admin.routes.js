@@ -13,7 +13,7 @@ function config($stateProvider, $httpProvider) {
     .state('admin', {
       url: '/admin',
       abstract: true,
-      templateUrl: 'src/admin/admin.html'
+      templateUrl: 'src/admin/signUp/signupTemplate.html'
     })
     // Contains state that all authenticated states inherit
     .state('admin.signup', {
