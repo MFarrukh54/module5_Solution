@@ -20,7 +20,7 @@ function RegistrationInfoController(MenuService) {
     var promise=MenuService.getCategories();
     promise.then(function(response){
         for(var i=0; i<response.length;i++){
-          if(response[i].short_name=="L"){
+          if(response[i].short_name==ctrl.Data.favoritedish){
             ctrl.menuItemDetail=response[i];
           }
         }
