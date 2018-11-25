@@ -13,7 +13,7 @@ function config($stateProvider, $httpProvider) {
     // Contains state that all authenticated states inherit
     .state('signup', {
       url: '/',
-      templateUrl: 'src/admin/signUp/signupTemplate.html',
+      templateUrl: 'src/admin/signup/signupTemplate.html',
       controller: 'RegistrationController',
       controllerAs: 'reg'
     });
@@ -26,9 +26,7 @@ function config($stateProvider, $httpProvider) {
       // These are params that this state expects to be populated
       // Allows us to pass via $state.go(path, params)
       
-    })
-    
-    ;
+    });
 }
 
 })();
