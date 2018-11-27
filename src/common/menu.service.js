@@ -19,6 +19,7 @@ function MenuService($http, ApiPath) {
 
   service.getMenuItems = function (category) {
     var config = {};
+    category=category.toUpperCase();
     if (category) {
       config.params = {'category': category};
     }
